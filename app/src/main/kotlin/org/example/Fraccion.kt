@@ -46,7 +46,7 @@ class Fraccion(numerador: Int, denominador: Int) {
     fun mostrar() {
         println(this.toString())
     }
-}
+
 
 // ===========================================
     // ETAPA 2: SUMA Y RESTA DE FRACCIONES
@@ -103,6 +103,42 @@ class Fraccion(numerador: Int, denominador: Int) {
      */
     private fun calcularMCD(a: Int, b: Int): Int {
         return if (b == 0) a else calcularMCD(b, a % b)
+    }
+
+
+// ===========================================
+    // ETAPA 3: MULTIPLICACIÓN Y DIVISIÓN
+    // ===========================================
+    
+    /**
+     * Operador de multiplicación entre fracciones
+     * Fórmula: (a/b) * (c/d) = (ac)/(bd)
+     * @param otra la fracción a multiplicar
+     * @return nueva fracción con el resultado simplificado
+     */
+    operator fun times(otra: Fraccion): Fraccion {
+        val nuevoNumerador = this.numerador * otra.numerador
+        val nuevoDenominador = this.denominador * otra.denominador
+        val resultado = Fraccion(nuevoNumerador, nuevoDenominador)
+        return resultado.simplificar()
+    }
+    
+    /**
+     * Operador de división entre fracciones
+     * Fórmula: (a/b) / (c/d) = (ad)/(bc)
+     * @param otra la fracción divisor
+     * @return nueva fracción con el resultado simplificado
+     * @throws IllegalArgumentException si el numerador de la fracción divisor es cero
+     */
+    operator fun div(otra: Fraccion): Fraccion {
+        if (otra.numerador == 0) {
+            throw IllegalArgumentException("No se puede dividir por cero (fracción con numerador cero)")
+        }
+        
+        val nuevoNumerador = this.numerador * otra.denominador
+        val nuevoDenominador = this.denominador * otra.numerador
+        val resultado = Fraccion(nuevoNumerador, nuevoDenominador)
+        return resultado.simplificar()
     }
 }
 

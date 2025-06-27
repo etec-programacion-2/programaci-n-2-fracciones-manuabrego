@@ -122,4 +122,34 @@ fun main() {
     println("$f3 - $f1 - $f2 = $resultado2")
     
     println("\n=== FIN PRUEBAS ETAPA 2 ===")
+
+    // ===========================================
+    // PRUEBAS ETAPA 3: MULTIPLICACIÓN Y DIVISIÓN
+    // ===========================================
+    println("\n=== PRUEBAS ETAPA 3: MULTIPLICACIÓN Y DIVISIÓN ===\n")
+    
+    // Usar las mismas fracciones que ya tenemos
+    println("Fracciones: f1=$f1, f2=$f2, f3=$f3, f4=$f4")
+    
+    // Pruebas de multiplicación
+    println("\n1. Multiplicación (*):")
+    println("$f1 * $f2 = ${f1 * f2}")
+    println("$f3 * $f4 = ${f3 * f4}")
+    
+    // Pruebas de división
+    println("\n2. División (/):")
+    println("$f1 / $f2 = ${f1 / f2}")
+    println("$f3 / $f4 = ${f3 / f4}")
+    
+    // Caso especial: división por cero
+    println("\n3. Validación división por cero:")
+    try {
+        val fraccionCero = Fraccion(0, 1)
+        val resultado = f1 / fraccionCero
+        println("ERROR: No detectó división por cero")
+    } catch (e: IllegalArgumentException) {
+        println("✓ Validación correcta: ${e.message}")
+    }
+    
+    println("\n=== FIN PRUEBAS ETAPA 3 ===")
 }
