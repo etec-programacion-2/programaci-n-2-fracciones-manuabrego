@@ -10,7 +10,7 @@
 
 **Curso:** 4to I
 
-**Fecha de entrega:** [Escribir aquí la fecha de entrega]
+**Fecha de entrega:** 27/6
 
 ---
 
