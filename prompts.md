@@ -1,7 +1,9 @@
------------ ETAPA 1 -------------- PAPI CLAUDE -----------------
-Prompt realizado: Hola Claude cómo estás? Hoy necesito ayuda con la programación. Estoy programando en Kotlin, programación orientada a objetos.                                                      El objetivo de este programa es que la clase fracción (con sus respectivos constructores y propiedades) pueda realizar operaciones básicas, como suma, resta, multiplicación y división. Debes recordar lo siguiente: Aplicar buenas prácticas de programación orientada a Kotlin, manejar casos especiales como fracciones con denominador cero o fracciones negativas, desarrollar una interfaz de línea de comandos (CLI) para probar la funcionalidad y utilizar los conceptos de POO.                   A continuación te pasaré cada ejercicio, no realices los push, en cambio haz un comentario identificando dónde hay que hacer cada uno. Debes mantenerlo simple, para un programador que está iniciando en Kotlin. Aquí está lo que debes hacer // y cada parte del read me, en este caso la de la etapa 1. 
+----------- ETAPA 1 -------------- CLAUDE 24/6-----------------
+Prompt1 realizado: Hola Claude cómo estás? Hoy necesito ayuda con la programación. Estoy programando en Kotlin, programación orientada a objetos.                                                      El objetivo de este programa es que la clase fracción (con sus respectivos constructores y propiedades) pueda realizar operaciones básicas, como suma, resta, multiplicación y división. Debes recordar lo siguiente: Aplicar buenas prácticas de programación orientada a Kotlin, manejar casos especiales como fracciones con denominador cero o fracciones negativas, desarrollar una interfaz de línea de comandos (CLI) para probar la funcionalidad y utilizar los conceptos de POO.                   A continuación te pasaré cada ejercicio, no realices los push, en cambio haz un comentario identificando dónde hay que hacer cada uno. Debes mantenerlo simple, para un programador que está iniciando en Kotlin. Aquí está lo que debes hacer */
+ 
+y cada parte del read me, en este caso la de la etapa 1 /*
 
-Respuesta: ¡Listo! Aquí tienes la implementación de la Etapa 1. Te explico los puntos clave:
+Respuesta1: ¡Listo! Aquí tienes la implementación de la Etapa 1. Te explico los puntos clave:
 
 Características implementadas:
 
@@ -19,67 +21,15 @@ Conceptos de Kotlin utilizados:
     Bloque init: Se ejecuta cuando se crea la instancia
     Validaciones: Lanzamos IllegalArgumentException para casos inválidos
     Documentación: Comentarios KDoc para explicar la clase y métodos
+Y el código... que ya está allá
 
-¿Cómo probar esta clase? Podrías crear un archivo temporal para probar:
-
-kotlin
-
-fun main() {
-    val f1 = Fraccion(3, 4)
-    f1.mostrar()  // Imprime: 3/4
-    
-    val f2 = Fraccion(1, 2)
-    println(f2)   // Imprime: 1/2
-}
-
-¿Te parece clara la implementación? ¿Tienes alguna pregunta sobre esta etapa antes de pasar a la siguiente? 
-
-Y acá el código: 
-
-/**
- * Clase que representa una fracción matemática
- * @param numerador el numerador de la fracción
- * @param denominador el denominador de la fracción (no puede ser cero)
- */
-class Fraccion(numerador: Int, denominador: Int) {
-    
-    // Propiedades con getters y setters automáticos
-    var numerador: Int = numerador
-        get() = field
-        set(value) { 
-            field = value 
-        }
-    
-    var denominador: Int = denominador
-        get() = field
-        set(value) { 
-            if (value == 0) {
-                throw IllegalArgumentException("El denominador no puede ser cero")
-            }
-            field = value 
-        }
-    
-    // Bloque init para validar el constructor
-    init {
-        if (denominador == 0) {
-            throw IllegalArgumentException("El denominador no puede ser cero")
-        }
-    }
-    
-    /**
-     * Devuelve la representación en texto de la fracción
-     * @return String en formato "numerador/denominador"
-     */
-    override fun toString(): String {
-        return "$numerador/$denominador"
-    }
-    
-    /**
-     * Imprime la fracción en consola
-     */
-    fun mostrar() {
-        println(this.toString())
-    }
-}
 
 // AQUÍ HACER PUSH: "Etapa 1: Definición básica de la clase Fraccion"
+
+
+Además este prompt para hacer un archivo aparte de pruebas: Bien, quiero que en todas las etapas siguientes también me des un código de cómo probar la etapa realizada en cuestión. Quiero que mantengas también una relación entre esos códigos. Todavía no sigas con la siguiente etapa.
+
+---------------------Claude 27/6--------------------------------
+Prompt2 hecho para etapa 2: Hola Claude, cómo estás? Continuemos por la etapa 2
+
+Respuesta2: El código de la etapa 2 y el código de pruebas etapa 2 en el app 

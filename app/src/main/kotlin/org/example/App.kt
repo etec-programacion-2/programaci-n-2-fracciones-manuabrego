@@ -4,9 +4,122 @@
 package org.example
 
 fun main() {
-    val f1 = Fraccion(3, 4)
-    f1.mostrar()  // Imprime: 3/4
+    println("=== PRUEBAS ETAPA 1: DEFINICIÓN BÁSICA DE LA CLASE FRACCION ===\n")
     
-    val f2 = Fraccion(1, 2)
-    println(f2)   // Imprime: 1/2
+    // Crear fracciones válidas
+    println("1. Creando fracciones válidas:")
+    val fraccion1 = Fraccion(3, 4)
+    val fraccion2 = Fraccion(1, 2)
+    val fraccion3 = Fraccion(-5, 8)
+    val fraccion4 = Fraccion(7, -3)
+    
+    println("Fracción 1: $fraccion1")
+    println("Fracción 2: $fraccion2")
+    println("Fracción 3: $fraccion3")
+    println("Fracción 4: $fraccion4")
+    
+    // Usar el método mostrar()
+    println("\n2. Usando el método mostrar():")
+    print("Fracción 1 con mostrar(): ")
+    fraccion1.mostrar()
+    print("Fracción 2 con mostrar(): ")
+    fraccion2.mostrar()
+    
+    // Acceder y modificar propiedades
+    println("\n3. Modificando propiedades:")
+    println("Fracción original: $fraccion1")
+    fraccion1.numerador = 6
+    println("Después de cambiar numerador a 6: $fraccion1")
+    fraccion1.denominador = 8
+    println("Después de cambiar denominador a 8: $fraccion1")
+    
+    // Probar validaciones
+    println("\n4. Probando validaciones:")
+    
+    // Caso 1: Crear fracción con denominador cero
+    println("Intentando crear fracción con denominador cero...")
+    try {
+        val fraccionInvalida = Fraccion(5, 0)
+        println("ERROR: Se creó la fracción inválida: $fraccionInvalida")
+    } catch (e: IllegalArgumentException) {
+        println("✓ Validación correcta: ${e.message}")
+    }
+    
+    // Caso 2: Cambiar denominador a cero
+    println("\nIntentando cambiar denominador a cero...")
+    try {
+        fraccion2.denominador = 0
+        println("ERROR: Se cambió el denominador a cero: $fraccion2")
+    } catch (e: IllegalArgumentException) {
+        println("✓ Validación correcta: ${e.message}")
+    }
+    
+    // Resumen de fracciones creadas para usar en siguientes etapas
+    println("\n5. Fracciones disponibles para pruebas futuras:")
+    println("fraccion1 = $fraccion1")
+    println("fraccion2 = $fraccion2") 
+    println("fraccion3 = $fraccion3")
+    println("fraccion4 = $fraccion4")
+    
+    println("\n=== FIN PRUEBAS ETAPA 1 ===")
+    
+    // ===========================================
+    // PRUEBAS ETAPA 2: SUMA Y RESTA
+    // ===========================================
+    println("\n=== PRUEBAS ETAPA 2: SUMA Y RESTA DE FRACCIONES ===\n")
+    
+    // Recrear fracciones para las pruebas (ya que modificamos fraccion1 antes)
+    val f1 = Fraccion(1, 2)  // 1/2
+    val f2 = Fraccion(1, 3)  // 1/3
+    val f3 = Fraccion(3, 4)  // 3/4
+    val f4 = Fraccion(-2, 5) // -2/5
+    
+    println("Fracciones para operar:")
+    println("f1 = $f1")
+    println("f2 = $f2")
+    println("f3 = $f3")
+    println("f4 = $f4")
+    
+    // Pruebas de suma
+    println("\n1. Pruebas de suma (+):")
+    println("$f1 + $f2 = ${f1 + f2}")
+    println("$f1 + $f3 = ${f1 + f3}")
+    println("$f2 + $f3 = ${f2 + f3}")
+    println("$f1 + $f4 = ${f1 + f4}") // Con fracción negativa
+    println("$f4 + $f3 = ${f4 + f3}") // Con fracción negativa
+    
+    // Pruebas de resta
+    println("\n2. Pruebas de resta (-):")
+    println("$f1 - $f2 = ${f1 - f2}")
+    println("$f3 - $f1 = ${f3 - f1}")
+    println("$f2 - $f3 = ${f2 - f3}")
+    println("$f1 - $f4 = ${f1 - f4}") // Con fracción negativa
+    println("$f4 - $f1 = ${f4 - f1}") // Con fracción negativa
+    
+    // Pruebas de simplificación automática
+    println("\n3. Verificando simplificación automática:")
+    val f5 = Fraccion(2, 4)  // 2/4 = 1/2
+    val f6 = Fraccion(3, 6)  // 3/6 = 1/2
+    println("$f5 + $f6 = ${f5 + f6}") // Debería dar 1/1 = 1
+    
+    val f7 = Fraccion(6, 8)  // 6/8 = 3/4
+    val f8 = Fraccion(2, 8)  // 2/8 = 1/4
+    println("$f7 - $f8 = ${f7 - f8}") // Debería dar 1/2
+    
+    // Casos especiales
+    println("\n4. Casos especiales:")
+    val cero = Fraccion(0, 1)  // 0/1 = 0
+    println("Suma con cero: $f1 + $cero = ${f1 + cero}")
+    println("Resta con cero: $f1 - $cero = ${f1 - cero}")
+    println("Cero menos fracción: $cero - $f1 = ${cero - f1}")
+    
+    // Operaciones encadenadas
+    println("\n5. Operaciones encadenadas:")
+    val resultado1 = f1 + f2 + f3
+    println("$f1 + $f2 + $f3 = $resultado1")
+    
+    val resultado2 = f3 - f1 - f2
+    println("$f3 - $f1 - $f2 = $resultado2")
+    
+    println("\n=== FIN PRUEBAS ETAPA 2 ===")
 }
