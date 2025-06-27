@@ -41,3 +41,7 @@ Respuesta3: Códigos de ambos, app y fraccion.
 Prompt4: Continuemos con la etapa 4
 
 Respuesta4: Códigos de ambos, app y fraccion. 
+
+Prompt5: Continuemos con la etapa 5
+
+Respuesta5: Código de app. 

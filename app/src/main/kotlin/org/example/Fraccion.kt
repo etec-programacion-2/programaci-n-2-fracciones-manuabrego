@@ -217,4 +217,4 @@ class Fraccion(numerador: Int, denominador: Int) {
     }
 }
 
-// AQUÍ HACER PUSH: "Etapa 4: Validaciones y métodos de utilidad completados"
+
