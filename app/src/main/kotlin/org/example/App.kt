@@ -152,4 +152,28 @@ fun main() {
     }
     
     println("\n=== FIN PRUEBAS ETAPA 3 ===")
+    println("\n=== PRUEBAS ETAPA 4: VALIDACIONES Y UTILIDADES ===\n")
+    
+    println("Fracciones: f1=$f1, f2=$f2, f3=$f3")
+    
+    // Pruebas de comparación
+    println("\n1. Comparaciones:")
+    println("$f1 > $f2 = ${f1.esMayor(f2)}")
+    println("$f2 < $f3 = ${f2.esMenor(f3)}")
+    println("$f1 == $f2 = ${f1.equals(f2)}")
+    
+    // Pruebas de conversión a decimal
+    println("\n2. Conversión a decimal:")
+    println("$f1 = ${f1.aDecimal()}")
+    println("$f3 = ${f3.aDecimal()}")
+    
+    // Pruebas de creación desde decimal
+    println("\n3. Creación desde decimal:")
+    val f9 = Fraccion.desdeDecimal(0.25)
+    val f10 = Fraccion.desdeDecimal(0.75)
+    println("0.25 → $f9")
+    println("0.75 → $f10")
+    
+    println("\n=== FIN PRUEBAS ETAPA 4 ===")
 }
+

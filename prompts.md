@@ -37,3 +37,7 @@ Respuesta2: El código de la etapa 2 y el código de pruebas etapa 2 en el app
 Prompt3:  Ahora continúa con la etapa 3
 
 Respuesta3: Códigos de ambos, app y fraccion. 
+
+Prompt4: Continuemos con la etapa 4
+
+Respuesta4: Códigos de ambos, app y fraccion. 

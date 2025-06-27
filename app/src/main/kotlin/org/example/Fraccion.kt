@@ -48,7 +48,8 @@ class Fraccion(numerador: Int, denominador: Int) {
     }
 
 
-// ===========================================
+    
+    // ===========================================
     // ETAPA 2: SUMA Y RESTA DE FRACCIONES
     // ===========================================
     
@@ -104,9 +105,8 @@ class Fraccion(numerador: Int, denominador: Int) {
     private fun calcularMCD(a: Int, b: Int): Int {
         return if (b == 0) a else calcularMCD(b, a % b)
     }
-
-
-// ===========================================
+    
+    // ===========================================
     // ETAPA 3: MULTIPLICACIÓN Y DIVISIÓN
     // ===========================================
     
@@ -140,5 +140,81 @@ class Fraccion(numerador: Int, denominador: Int) {
         val resultado = Fraccion(nuevoNumerador, nuevoDenominador)
         return resultado.simplificar()
     }
+    
+    // ===========================================
+    // ETAPA 4: VALIDACIONES Y MÉTODOS DE UTILIDAD
+    // ===========================================
+    
+    /**
+     * Operador de comparación entre fracciones
+     * @param otra fracción a comparar
+     * @return -1 si esta fracción es menor, 0 si son iguales, 1 si es mayor
+     */
+    operator fun compareTo(otra: Fraccion): Int {
+        // Comparar usando productos cruzados: a/b vs c/d → ad vs bc
+        val producto1 = this.numerador * otra.denominador
+        val producto2 = otra.numerador * this.denominador
+        return producto1.compareTo(producto2)
+    }
+    
+    /**
+     * Verifica si dos fracciones son iguales
+     * @param other objeto a comparar
+     * @return true si son iguales, false en caso contrario
+     */
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Fraccion) return false
+        
+        // Comparar usando productos cruzados
+        val producto1 = this.numerador * other.denominador
+        val producto2 = other.numerador * this.denominador
+        return producto1 == producto2
+    }
+    
+    /**
+     * Verifica si esta fracción es mayor que otra
+     * @param otra fracción a comparar
+     * @return true si esta fracción es mayor
+     */
+    fun esMayor(otra: Fraccion): Boolean {
+        return this.compareTo(otra) > 0
+    }
+    
+    /**
+     * Verifica si esta fracción es menor que otra
+     * @param otra fracción a comparar
+     * @return true si esta fracción es menor
+     */
+    fun esMenor(otra: Fraccion): Boolean {
+        return this.compareTo(otra) < 0
+    }
+    
+    /**
+     * Convierte la fracción a su representación decimal
+     * @return valor decimal de la fracción
+     */
+    fun aDecimal(): Double {
+        return numerador.toDouble() / denominador.toDouble()
+    }
+    
+    /**
+     * Objeto companion para métodos estáticos
+     */
+    companion object {
+        /**
+         * Crea una fracción a partir de un número decimal
+         * @param decimal número decimal a convertir
+         * @return fracción equivalente al decimal
+         */
+        fun desdeDecimal(decimal: Double): Fraccion {
+            val precision = 1000000 // Precisión para 6 decimales
+            val numerador = (decimal * precision).toInt()
+            val denominador = precision
+            
+            return Fraccion(numerador, denominador).simplificar()
+        }
+    }
 }
 
+// AQUÍ HACER PUSH: "Etapa 4: Validaciones y métodos de utilidad completados"
